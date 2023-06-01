@@ -11,4 +11,6 @@ module.exports = () => {
 
   //DELETE events/delete/:id
   router.delete("/delete/:id", eventsController.delete);
+
+  return router;
 };
