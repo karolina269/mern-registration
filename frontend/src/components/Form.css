@@ -1,3 +1,11 @@
 .errors {
   list-style: none;
 }
+
+form .wrapper {
+  margin-top: 1em;
+}
+
+form .wrapper label {
+  margin-right: 0.25em;
+}

@@ -4,7 +4,7 @@ import config from "../config";
 import Select from "./Select";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
   const [name, setName] = useState("");
   const [event, setEvent] = useState({ key: "", value: "" });
   const [city, setCity] = useState({ key: "", value: "" });
@@ -47,7 +47,7 @@ const Form = () => {
     axios
       .post(config.api.url + "/events/add", eventObj, { mode: "cors" })
       .then((res) => {
-        console.log(res);
+        props.getEvents();
       })
       .catch((err) => {
         console.error(err);
@@ -101,7 +101,7 @@ const Form = () => {
   return (
     <>
       <form action="#" onSubmit={validateForm}>
-        <div className="formWrapper">
+        <div className="wrapper">
           <label htmlFor="name">Imię i nazwisko</label>
           <input type="text" id="name" value={name} onChange={handleChangeName} />
         </div>
